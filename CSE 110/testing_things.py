@@ -1,7 +1,7 @@
 # from transformers import pipeline
 # generator = pipeline('text-generation', model='EleutherAI/gpt-neo-2.7B')
-# prompt = ''
-# res = generator(prompt, max_length=1000, do_sample=True, temperature=0.9)
+# prompt = """"""
+# res = generator(prompt, max_length=2000, do_sample=True, temperature=0.9)
 # print(res[0]['generated_text'])
 
 # import os
@@ -14,4 +14,3 @@
 #     for word in words:
 #         if len(word) == 7:
 #             print(f"\"{word.strip()}\", ", end="")
-
