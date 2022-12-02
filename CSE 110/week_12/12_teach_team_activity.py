@@ -2,7 +2,7 @@
 # CSE 110
 # 12 Teach: Team Activity - Finding Items in a File
 
-# define varables
+# define variables
 largest_chapters = float("-inf")
 
 book_of_interest = input("What volume of scriptures would you like to learn about? (for example, Old Testament, New Testament, Book of Mormon, Doctrine and Covenants, Pearl of Great Price) ")

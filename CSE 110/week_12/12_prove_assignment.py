@@ -14,7 +14,7 @@ Find another dataset and work with it.
 Anything else you can think of!
 """
 
-# difine varables
+# define variables
 largest_life = float("-inf")
 smallest_life = float("inf")
 line_numb = 0
