@@ -6,7 +6,6 @@ from datetime import datetime
 
 current_date_and_time = datetime.now()
 day_of_week = current_date_and_time.weekday()
-day_of_week = 2
 
 subtotal = float(input("Please enter the subtotal: "))
 
