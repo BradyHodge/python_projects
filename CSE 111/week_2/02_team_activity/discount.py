@@ -17,7 +17,7 @@ else:
     discount = 0
 
 discount_subtotal_amount = round(subtotal * discount, 2)
-sales_tax_amount = ((subtotal - discount_subtotal_amount) * 0.06) # used the wrong var
+sales_tax_amount = ((subtotal - discount_subtotal_amount) * 0.06)
 total = (subtotal + sales_tax_amount)
 
 if discount != 0:
