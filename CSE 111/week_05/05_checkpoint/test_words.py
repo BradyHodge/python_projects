@@ -1,4 +1,8 @@
-"""Verify that the prefix and suffix functions work correctly."""
+"""
+Made by Brady Hodge
+CSE 111
+05 Checkpoint: Testing Functions
+"""
 
 from words import prefix, suffix
 import pytest
