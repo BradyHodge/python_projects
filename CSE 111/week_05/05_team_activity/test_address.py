@@ -31,7 +31,7 @@ def test_extract_zipcode():
 
     Parameters: none
     Return: nothing
-    """
+    """ 
     assert extract_zipcode("123 W Main, Rexburg, ID 83440") == "83440"
     assert extract_zipcode("78 Pine St, Avon Park, FL 33825") == "33825"
 
