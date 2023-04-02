@@ -7,7 +7,7 @@ import os
 import eyed3
 import requests
 
-API_key = "b02f54d464mshe8ac5bbdebef614p18f6aajsn6439caf64698"
+API_key = input("Enter your API key: ")
 
 # get the directory path from the user
 # loop through all the files in the directory
