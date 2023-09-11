@@ -7,8 +7,7 @@ import os
 import eyed3
 import requests
 
-API_key = input("Enter your API key: ")
-API_key = input("Enter your API key: ")
+API_key = ''
 
 # get the directory path from the user
 # loop through all the files in the directory
@@ -21,11 +20,7 @@ API_key = input("Enter your API key: ")
 # update the metadata fields using the information from the online database
 # save the updated metadata to the mp3 file
 
-"""
 
-search_shazam returns this:
-{"tracks":{"hits":[{"track":{"layout":"5","type":"MUSIC","key":"548030459","title":"Christmas Saves The Year","subtitle":"twenty one pilots","share":{"subject":"Christmas Saves The Year - twenty one pilots","text":"I used Shazam to discover Christmas Saves The Year by twenty one pilots.","href":"https://www.shazam.com/track/548030459/christmas-saves-the-year","image":"https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/52/64/d0/5264d066-236f-1079-3135-e6a610411c2a/075679794536.jpg/400x400cc.jpg","twitter":"I used @Shazam to discover Christmas Saves The Year by twenty one pilots.","html":"https://www.shazam.com/snippets/email-share/548030459?lang=en-US&country=US","avatar":"https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/ee/a5/67/eea567e6-e0a7-6ec0-e564-cb2bedf11608/pr_source.png/800x800cc.jpg","snapchat":"https://www.shazam.com/partner/sc/track/548030459"},"images":{"background":"https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/ee/a5/67/eea567e6-e0a7-6ec0-e564-cb2bedf11608/pr_source.png/800x800cc.jpg","coverart":"https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/52/64/d0/5264d066-236f-1079-3135-e6a610411c2a/075679794536.jpg/400x400cc.jpg","coverarthq":"https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/52/64/d0/5264d066-236f-1079-3135-e6a610411c2a/075679794536.jpg/400x400cc.jpg","joecolor":"b:983f35p:fbf7e6s:f6ede8t:e7d3c3q:e3cac4"},"hub":{"type":"APPLEMUSIC","image":"https://images.shazam.com/static/icons/hub/ios/v5/applemusic_{scalefactor}.png","actions":[{"name":"apple","type":"applemusicplay","id":"1543103936"},{"name":"apple","type":"uri","uri":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/65/47/cb/6547cbe8-c01f-ab52-033a-2aab579a139c/mzaf_12691946955685157523.plus.aac.ep.m4a"}],"options":[{"caption":"OPEN","actions":[{"name":"hub:applemusic:deeplink","type":"applemusicopen","uri":"https://music.apple.com/us/album/christmas-saves-the-year/1543103935?i=1543103936&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"},{"name":"hub:applemusic:deeplink","type":"uri","uri":"https://music.apple.com/us/album/christmas-saves-the-year/1543103935?i=1543103936&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"}],"beacondata":{"type":"open","providername":"applemusic"},"image":"https://images.shazam.com/static/icons/hub/ios/v5/overflow-open-option_{scalefactor}.png","type":"open","listcaption":"Open in Apple Music","overflowimage":"https://images.shazam.com/static/icons/hub/ios/v5/applemusic-overflow_{scalefactor}.png","colouroverflowimage":false,"providername":"applemusic"},{"caption":"BUY","actions":[{"type":"uri","uri":"https://itunes.apple.com/us/album/christmas-saves-the-year/1543103935?i=1543103936&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=itunes&itsct=Shazam_ios"}],"beacondata":{"type":"buy","providername":"itunes"},"image":"https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png","type":"buy","listcaption":"Buy on iTunes","overflowimage":"https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png","colouroverflowimage":false,"providername":"itunes"}],"providers":[{"caption":"Open in Spotify","images":{"overflow":"https://images.shazam.com/static/icons/hub/ios/v5/spotify-overflow_{scalefactor}.png","default":"https://images.shazam.com/static/icons/hub/ios/v5/spotify_{scalefactor}.png"},"actions":[{"name":"hub:spotify:searchdeeplink","type":"uri","uri":"spotify:search:Christmas%20Saves%20The%20Year%20twenty%20one%20pilots"}],"type":"SPOTIFY"},{"caption":"Open in Deezer","images":{"overflow":"https://images.shazam.com/static/icons/hub/ios/v5/deezer-overflow_{scalefactor}.png","default":"https://images.shazam.com/static/icons/hub/ios/v5/deezer_{scalefactor}.png"},"actions":[{"name":"hub:deezer:searchdeeplink","type":"uri","uri":"deezer-query://www.deezer.com/play?query=%7Btrack%3A%27Christmas+Saves+The+Year%27%20artist%3A%27twenty+one+pilots%27%7D"}],"type":"DEEZER"}],"explicit":false,"displayname":"APPLE MUSIC"},"artists":[{"id":"42","adamid":"349736311"}],"url":"https://www.shazam.com/track/548030459/christmas-saves-the-year"}}]},"artists":{"hits":[{"artist":{"avatar":"https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/ee/a5/67/eea567e6-e0a7-6ec0-e564-cb2bedf11608/pr_source.png/800x800bb.jpg","name":"twenty one pilots","verified":false,"weburl":"https://music.apple.com/us/artist/twenty-one-pilots/349736311","adamid":"349736311"}}]}}
-"""
 
 def main():
     # Prompt user for directory path
@@ -84,11 +79,14 @@ def update_metadata(directory_path):
                 track = data['album'][0]
 
                 # Update the metadata fields using the information from the online database
-                audiofile.tag.album = track['strAlbum']
-                audiofile.tag.album_artist = track['strArtist']
-                audiofile.tag.track_num = track['intTrackNumber']
-                audiofile.tag.genre = track['strGenre']
-                audiofile.tag.release_date = track['intYearReleased']
+                try:
+                    audiofile.tag.album = track['strAlbum']
+                    audiofile.tag.album_artist = track['strArtist']
+                    audiofile.tag.track_num = track['intTrackNumber']
+                    audiofile.tag.genre = track['strGenre']
+                    audiofile.tag.release_date = track['intYearReleased']
+                except KeyError:
+                    print (f"Error: {mp3_file}")
 
                 # Save the updated metadata to the mp3 file
                 audiofile.tag.save()
@@ -98,26 +96,35 @@ def update_metadata(directory_path):
                     track = data['tracks']['hits'][0]['track']
 
                     # Update the metadata fields using the information from the online database
-                    audiofile.tag.album = track['album']['title']
-                    audiofile.tag.album_artist = track['artists'][0]['name']
-                    audiofile.tag.track_num = track['trackPosition']
-                    audiofile.tag.genre = track['sections'][0]['metadata']['genre']['name']
-                    audiofile.tag.release_date = track['sections'][0]['metadata']['releaseDate']
+                    try:
+                        audiofile.tag.album = track['album']['title']
+                        audiofile.tag.album_artist = track['artists'][0]['name']
+                        audiofile.tag.track_num = track['trackPosition']
+                        audiofile.tag.genre = track['sections'][0]['metadata']['genre']['name']
+                        audiofile.tag.release_date = track['sections'][0]['metadata']['releaseDate']
+                    except KeyError:
+                        print (f"Error: {mp3_file}")
 
                     # Save the updated metadata to the mp3 file
                     audiofile.tag.save()
         else:
             data = search_shazam(f"{mp3_file}")
-            if data['tracks']['hits']:
-                track = data['tracks']['hits'][0]['track']
+            try:
+                if data['tracks']['hits']:
+                    track = data['tracks']['hits'][0]['track']
+            except KeyError:
+                print (f"Error: {mp3_file}")
 
                 # Update the metadata fields using the information from the
                 # online database
-                audiofile.tag.album = track['album']['title']
-                audiofile.tag.album_artist = track['artists'][0]['name']
-                audiofile.tag.track_num = track['trackPosition']
-                audiofile.tag.genre = track['sections'][0]['metadata']['genre']['name']
-                audiofile.tag.release_date = track['sections'][0]['metadata']['releaseDate']
+                try:
+                    audiofile.tag.album = track['album']['title']
+                    audiofile.tag.album_artist = track['artists'][0]['name']
+                    audiofile.tag.track_num = track['trackPosition']
+                    audiofile.tag.genre = track['sections'][0]['metadata']['genre']['name']
+                    audiofile.tag.release_date = track['sections'][0]['metadata']['releaseDate']
+                except KeyError:
+                    print (f"Error: {mp3_file}")
 
 def add_album_art(mp3_path, image_url):
     # Download the image from the URL
